@@ -1,6 +1,5 @@
 package com.codebase.kartikey.module1Introduction;
 
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -8,8 +7,11 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 @SpringBootApplication
 public class Module1IntroductionApplication implements CommandLineRunner {
 
-	@Autowired
-	NotificationService notificationService;
+	final NotificationService notificationService; //dependency injection
+
+	public Module1IntroductionApplication(NotificationService notificationService) {
+		this.notificationService = notificationService; // constructor DI //// Preferred way of DI
+	}
 
 	public static void main(String[] args) {
 		SpringApplication.run(Module1IntroductionApplication.class, args);
