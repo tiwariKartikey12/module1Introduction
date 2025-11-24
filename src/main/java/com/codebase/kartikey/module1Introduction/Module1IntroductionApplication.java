@@ -10,7 +10,7 @@ public class Module1IntroductionApplication implements CommandLineRunner {
 
 	final NotificationService notificationService; //dependency injection
 
-	public Module1IntroductionApplication(@Qualifier("emailNotif") NotificationService notificationService) {
+	public Module1IntroductionApplication(NotificationService notificationService) {
 		this.notificationService = notificationService; // constructor DI //// Preferred way of DI
 	}
 
