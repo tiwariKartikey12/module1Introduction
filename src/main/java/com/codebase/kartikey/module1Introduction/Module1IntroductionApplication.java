@@ -9,10 +9,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 public class Module1IntroductionApplication implements CommandLineRunner {
 
 	@Autowired
-	PaymentService paymentServiceObj1;
-
-	@Autowired
-	PaymentService paymentServiceObj2;
+	NotificationService notificationService;
 
 	public static void main(String[] args) {
 		SpringApplication.run(Module1IntroductionApplication.class, args);
@@ -20,12 +17,7 @@ public class Module1IntroductionApplication implements CommandLineRunner {
 
 	@Override
 	public void run(String... args) throws Exception {
-
-		System.out.println(paymentServiceObj1.hashCode());
-		System.out.println(paymentServiceObj2.hashCode());
-
-		paymentServiceObj1.pay();
-		paymentServiceObj2.pay();
+		notificationService.send("hello");
 	}
 
 }
