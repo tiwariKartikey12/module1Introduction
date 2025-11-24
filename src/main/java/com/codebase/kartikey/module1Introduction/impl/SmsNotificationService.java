@@ -1,11 +1,11 @@
 package com.codebase.kartikey.module1Introduction.impl;
 
 import com.codebase.kartikey.module1Introduction.NotificationService;
-import org.springframework.context.annotation.Primary;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Component;
 
-@Primary
 @Component
+@Qualifier("smsNotif")
 public class SmsNotificationService implements NotificationService {
 
     @Override

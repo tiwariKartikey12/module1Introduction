@@ -1,5 +1,6 @@
 package com.codebase.kartikey.module1Introduction;
 
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -9,7 +10,7 @@ public class Module1IntroductionApplication implements CommandLineRunner {
 
 	final NotificationService notificationService; //dependency injection
 
-	public Module1IntroductionApplication(NotificationService notificationService) {
+	public Module1IntroductionApplication(@Qualifier("emailNotif") NotificationService notificationService) {
 		this.notificationService = notificationService; // constructor DI //// Preferred way of DI
 	}
 
